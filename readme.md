@@ -7,7 +7,7 @@ This bumps and syncs config.xml, package.json and bower.json semantic versions
 ## Install
 
 ```sh
-$ npm install --save-dev gulp-cordova-bump
+$ npm install --save-dev gulp-cordova-config
 ```
 
 ## Add the following to your gulpfile
