@@ -1,9 +1,3 @@
-> Bump your Cordova package version
-
-Run this before you run cordova build
-
-This bumps and syncs config.xml, package.json and bower.json semantic versions
-
 ## Install
 
 ```sh
