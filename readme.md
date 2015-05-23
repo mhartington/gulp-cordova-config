@@ -1,5 +1,4 @@
 Run this before you run cordova build
-
 ## Install
 
 ```sh
