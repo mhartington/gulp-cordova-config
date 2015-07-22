@@ -18,7 +18,7 @@ cordovaConfig.prototype.run = function() {
   } else if (args.appName) {
     return this.name(args.appName)
   } else if (args.appVersion) {
-    return this.name(args.appVersion)
+    return this.version(args.appVersion)
   } else {
     return this.help();
   }
