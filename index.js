@@ -17,6 +17,8 @@ cordovaConfig.prototype.run = function() {
     return this.id(args.appId);
   } else if (args.appName) {
     return this.name(args.appName)
+  } else if (args.appVersion) {
+    return this.version(args.appVersion)
   } else {
     return this.help();
   }
@@ -49,6 +51,19 @@ cordovaConfig.prototype.id = function(newId) {
     .pipe(vfs.dest("./"));
 }
 
+cordovaConfig.prototype.version = function(newVersion) {
+  this.pluginMessage();
+  return vfs.src(['./config.xml'])
+    .pipe(vfs.dest('./'))
+    .pipe(xeditor([{
+      path: '.',
+      attr: {
+        'version': newVersion
+      }
+    }]))
+    .pipe(vfs.dest("./"));
+}
+
 
 /*
  * helper functions -----------------------
@@ -59,7 +74,7 @@ cordovaConfig.prototype.pluginMessage = function() {
 }
 
 cordovaConfig.prototype.help = function() {
-  gutil.log('\n\tUSAGE:\n\t\t$ gulp config --appId="com.new.id"\n\t\t$ gulp config --appName="newName"\n');
+  gutil.log('\n\tUSAGE:\n\t\t$ gulp config --appId="com.new.id"\n\t\t$ gulp config --appName="newName"\n\t\t$ gulp config --appVersion="newVersion"\n');
 }
 
 /*
