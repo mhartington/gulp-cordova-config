@@ -58,7 +58,7 @@ cordovaConfig.prototype.version = function(newVersion) {
     .pipe(xeditor([{
       path: '.',
       attr: {
-        'version': version
+        'version': newVersion
       }
     }]))
     .pipe(vfs.dest("./"));
